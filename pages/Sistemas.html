@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>SAO - Administrador de Sistemas</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- MetisMenu CSS -->
+  <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+  <!-- DataTables CSS -->
+  <link href="../vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+
+  <!-- DataTables Responsive CSS -->
+  <link href="../vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+  <!-- Custom Fonts -->
+  <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+  <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">SAO</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /. Menu -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li class="sidebar-search">
+                                                        <!-- /input-group -->
+                        </li>
+                        <li class="active">
+                            <a href="home.html" class="active"><i class="fa fa-dashboard fa-fw"></i> Home</a>
+                        </li>
+
+
+                        <li>
+                            <a href="Sistemas.html"><i class="fa fa-user fa-fw"></i> Sistemas</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-file-text fa-fw"></i> Historico <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                              <li>
+                                  <a href="#"><i class="fa fa-edit fa-fw"></i> Consumo de Agua </a>
+                                  <ul class="nav nav-third-level">
+                                    <li>
+                                        <a href="AguaHoy.html"><i class="fa fa-edit fa-fw"></i> 24 Horas </a>
+                                    </li>
+                                    <li>
+                                        <a href="AguaSemana.html"><i class="fa fa-edit fa-fw"></i> Semana </a>
+                                    </li>
+                                    <li>
+                                        <a href="AguaMes.html"><i class="fa fa-edit fa-fw"></i> Mes </a>
+                                    </li>
+                                  </ul>
+                              </li>
+                              <li>
+                                  <a href="#"><i class="fa fa-edit fa-fw"></i> Consumo de Energia </a>
+                                  <ul class="nav nav-third-level">
+                                    <li>
+                                        <a href="BombaHoy.html"><i class="fa fa-edit fa-fw"></i> 24 Horas </a>
+                                    </li>
+                                    <li>
+                                        <a href="BombaSemana.html"><i class="fa fa-edit fa-fw"></i> Semana </a>
+                                    </li>
+                                    <li>
+                                        <a href="BombaMes.html"><i class="fa fa-edit fa-fw"></i> Mes </a>
+                                    </li>
+                                  </ul>
+                              </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="vehiculos.html"><i class="fa fa-gear fa-fw"></i> Configuracion</a>
+                        </li>
+
+
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+
+    <!-- Page Contenido -->
+    <div id="page-wrapper">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12">
+            <h1 class="page-header">Ssitemas</h1>
+          </div>
+          <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+        <!-- Aquí va el contenido -->
+
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                Detalle de Sistemas Asociados
+              </div>
+              <!-- /.panel-heading -->
+              <div class="panel-body">
+                <table width="100%" class="table table-striped table-bordered table-hover" id="tablita">
+                  <thead>
+                    <tr>
+                      <th>Detalle</th>
+                      <th>Consumo de Agua</th>
+                      <th>Nivel de Agua</th>
+                      <th>Claridad</th>
+                      <th>Opciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                    <!-- El contenido de la tabla se carga con ajax -->
+
+
+                  </tbody>
+                </table>
+                <!-- acá va el botón nuevo -->
+                <div class="well">
+                  <button type="button" class="btn btn-primary" id="btnNuevoVehiculo">
+                      Nuevo Sistema
+                    </button>
+                </div>
+
+
+                <!-- Ventana modal nuevo Vehiculo -->
+                <div class="modal fade" id="modalNuevo" tabindex="-1" role="dialog" aria-labelledby="labelModalnuevo" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="labelModalnuevo">Nuevo Sistema</h4>
+                      </div>
+                      <div class="modal-body">
+                        <!-- Ventana modal form nuevo Vehiculo -->
+
+                        <form>
+
+                          <div class="row">
+                            <div class="col-lg-6">
+                              <div class="form-group">
+                                <label for="txtPatente">Detalle</label>
+                                <input type="text" class="form-control" id="txtDetalle" placeholder="Detalle">
+                              </div>
+                            </div>
+                            <div class="col-lg-6">
+                              <label for="txtValor">Serie</label>
+                              <div class="input-group">
+                                <span class="input-group-addon">$</span>
+                                <input type="number" class="form-control" id="txtSerie" placeholder="Numero de Serie">
+                              </div>
+                            </div>
+                          </div>
+
+                      </form>
+</div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary" id="btnGuardarNuevo">Guardar</button>
+                      </div>
+                    </div>
+                    <!-- /.modal-content -->
+                  </div>
+                  <!-- /.modal-dialog -->
+                </div>
+
+                <!-- Ventana modal Editar Vehiculo -->
+                <div class="modal fade" id="modalEditar" tabindex="-1" role="dialog" aria-labelledby="labelModalEditar" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="labelModalEditar">Editar Vehículo</h4>
+                      </div>
+                      <div class="modal-body">
+                        <!-- Ventana modal form Editar Vehiculo -->
+
+                        <form>
+                        <input type="hidden" class="form-control" id="EditarIdVehiculo" >
+                          <div class="row">
+                            <div class="col-lg-6">
+                              <div class="form-group">
+                                <label for="txtEditarPatente">Patente</label>
+                                <input type="text" class="form-control" id="txtEditarPatente" placeholder="Patente">
+                              </div>
+                            </div>
+                            <div class="col-lg-6">
+                              <label for="txtEditarValor">Valor</label>
+                              <div class="input-group">
+                                <span class="input-group-addon">$</span>
+                                <input type="number" class="form-control" id="txtEditarValor" placeholder="Valor">
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-lg-4">
+                              <div class="form-group">
+                                <label for="selEditarMarca">Marca</label>
+                                <select class="form-control" id="selEditarMarca">
+                                  <option>1</option>
+                                  <option>2</option>
+                                  <option>3</option>
+                                  <option>4</option>
+                                  <option>5</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <div class="col-lg-4">
+                              <div class="form-group">
+                                <label for="selEditarModelo">Modelo</label>
+                                <select class="form-control" id="selEditarModelo">
+                                  <option>1</option>
+                                  <option>2</option>
+                                  <option>3</option>
+                                  <option>4</option>
+                                  <option>5</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <div class="col-lg-4">
+                              <div class="form-group">
+                                <label for="selEditarVersion">Versión</label>
+                                <select class="form-control" id="selEditarVersion">
+                                  <option>1</option>
+                                  <option>2</option>
+                                  <option>3</option>
+                                  <option>4</option>
+                                  <option>5</option>
+                                </select>
+                              </div>
+                            </div>
+
+                          </div>
+
+                          <div class="row">
+                            <div class="col-lg-4">
+                              <div class="form-group">
+                                <label for="selEditarTipo">Tipo de Vehículo</label>
+                                <select class="form-control" id="selEditarTipo">
+                                  <option>1</option>
+                                  <option>2</option>
+                                  <option>3</option>
+                                  <option>4</option>
+                                  <option>5</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <div class="col-lg-4">
+                              <div class="form-group">
+                                <label for="txtEditarColor">Color</label>
+                                <input type="text" class="form-control" id="txtEditarColor" placeholder="Color">
+                              </div>
+                            </div>
+
+                            <div class="col-lg-4">
+                              <label for="txtEditarYear">Año</label>
+                              <div class="input-group">
+                                <span class="input-group-addon">$</span>
+                                <input type="number" class="form-control" id="txtEditarYear" placeholder="Año" min="1900" max="2018">
+                              </div>
+                            </div>
+
+                          </div>
+
+
+                        </form>
+
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary" id="btnGuardarEditar">Guardar</button>
+                      </div>
+                    </div>
+                    <!-- /.modal-content -->
+                  </div>
+                  <!-- /.modal-dialog -->
+                </div>
+
+                <!-- Ventana modal Detalle Vehiculo -->
+                <div class="modal fade" id="modalDetalle" tabindex="-1" role="dialog" aria-labelledby="labelModalDetalle" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="labelModalDetalle">Detalle Vehículo</h4>
+                      </div>
+                      <div class="modal-body">
+                        <!-- Ventana modal form Detalle Vehiculo -->
+
+                        <form>
+
+                          <div class="row">
+                            <div class="col-lg-6">
+                              <div class="form-group">
+                                <label for="txtDetallePatente">Patente</label>
+                                <input type="text" class="form-control" id="txtDetallePatente" placeholder="Patente" disabled>
+                              </div>
+                            </div>
+                            <div class="col-lg-6">
+                              <label for="txtDetalleValor">Valor</label>
+                              <div class="input-group">
+                                <span class="input-group-addon">$</span>
+                                <input type="number" class="form-control" id="txtDetalleValor" placeholder="Valor" disabled>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-lg-4">
+                              <div class="form-group">
+                                <label for="selDetalleMarca">Marca</label>
+                                <select class="form-control" id="selDetalleMarca" disabled>
+
+                                </select>
+                              </div>
+                            </div>
+
+                            <div class="col-lg-4">
+                              <div class="form-group">
+                                <label for="selDetalleModelo">Modelo</label>
+                                <select class="form-control" id="selDetalleModelo" disabled disabled>
+                                  <option>1</option>
+                                  <option>2</option>
+                                  <option>3</option>
+                                  <option>4</option>
+                                  <option>5</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <div class="col-lg-4">
+                              <div class="form-group">
+                                <label for="selDetalleVersion">Versión</label>
+                                <select class="form-control" id="selDetalleVersion" disabled disabled>
+                                  <option>1</option>
+                                  <option>2</option>
+                                  <option>3</option>
+                                  <option>4</option>
+                                  <option>5</option>
+                                </select>
+                              </div>
+                            </div>
+
+                          </div>
+
+                          <div class="row">
+                            <div class="col-lg-4">
+                              <div class="form-group">
+                                <label for="selDetalleTipo">Tipo de Vehículo</label>
+                                <select class="form-control" id="selDetalleTipo" disabled>
+                                  <option>1</option>
+                                  <option>2</option>
+                                  <option>3</option>
+                                  <option>4</option>
+                                  <option>5</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <div class="col-lg-4">
+                              <div class="form-group">
+                                <label for="txtDetalleColor">Color</label>
+                                <input type="text" class="form-control" id="txtDetalleColor" placeholder="Color" disabled>
+                              </div>
+                            </div>
+
+                            <div class="col-lg-4">
+                              <label for="txtDetalleYear">Año</label>
+                              <div class="input-group">
+                                <span class="input-group-addon">$</span>
+                                <input type="number" class="form-control" id="txtDetalleYear" placeholder="Año" min="1900" max="2018" disabled>
+                              </div>
+                            </div>
+
+                          </div>
+
+
+                        </form>
+
+                      </div>
+                      <div class="modal-footer">
+
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                      </div>
+                    </div>
+                    <!-- /.modal-content -->
+                  </div>
+                  <!-- /.modal-dialog -->
+                </div>
+
+
+                <!-- Ventana modal Eliminar Vehiculo -->
+                <div class="modal fade" id="modalEliminar" tabindex="-1" role="dialog" aria-labelledby="labelModalEliminar" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="labelModalEliminar">Eliminar Vehículo</h4>
+                      </div>
+                      <div class="modal-body">
+                        <!-- Ventana modal form Eliminar Vehiculo -->
+
+                        Se eliminará el vehículo con Patente: <strong>ejemplo</strong>
+
+                      <input type="hidden" class="form-control" id="EliminarIdVehiculo" >
+
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button type="button" id="btnGuardarEliminar" class="btn btn-danger">Eliminar</button>
+                      </div>
+                    </div>
+                    <!-- /.modal-content -->
+                  </div>
+                  <!-- /.modal-dialog -->
+                </div>
+
+
+
+              </div>
+              <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+          </div>
+          <!-- /.col-lg-12 -->
+        </div>
+
+
+
+      </div>
+      <!-- /.container-fluid -->
+    </div>
+    <!-- /#page-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- jQuery -->
+  <script src="../vendor/jquery/jquery.min.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+  <!-- Metis Menu Plugin JavaScript -->
+  <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+
+  <!-- DataTables JavaScript -->
+  <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
+  <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+  <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
+
+  <!-- Custom Theme JavaScript -->
+  <script src="../dist/js/sb-admin-2.js"></script>
+
+
+  <!-- inicialización de la tabla  -->
+  <script>
+    $(document).ready(function() {
+
+      //carga la tabla con datos desde ajax
+      var table = $('#tablita').DataTable({
+
+        "ajax": {
+          "url": "http://desarrolloweb.us-west-2.elasticbeanstalk.com/rentacar/vehiculo/",
+          "dataSrc": ""
+        }, //llama al controller del backEnd
+        "columns": [ //define que campos del json se cargarán en las distintas columnas
+          {
+            "data": "patente"
+          }, //define donde buscar los datos para la columna 0
+          {
+            "data": "tipoVehiculo.nombreTipoVehiculo"
+          }, //define donde buscar los datos para la columna 1
+          {
+            "data": "version.modelo.marca.nombreMarca"
+          }, //define donde buscar los datos para la columna 2
+          {
+            "data": "version.modelo.nombreModelo"
+          } //define donde buscar los datos para la columna 3
+        ],
+        rowId: 'idVehiculo', //define cual es el campo del json que será el id de la fila
+        "columnDefs": [{ //define una columna distinta
+          "targets": 4, // la columna 4 (de los botones) no cargará datos desde el json pero si define contenido por defecto
+          "data": null,
+          "defaultContent": "<button type='button' id='btnDetalleModal' class='btn btn-success btn-circle' ><i class='fa fa-search'></i></button>" +
+            "<button type='button' id='btnEditarModal' class='btn btn-warning btn-circle'><i class='fa fa-pencil'></i></button>" +
+            "<button type='button' id='btnEliminarModal' class='btn btn-danger btn-circle'><i class='fa fa-trash-o'></i></button>"
+
+        }],
+        responsive: true //transforma la tabla en responsiva, cuando cambia el tamaño se agrupan las filas
+      });
+
+
+
+      //Funcion jquery Nuevo
+      $("#btnNuevoVehiculo").click(function() {
+
+        $('#selMarca').empty(); // se vacían los selects
+        $('#selModelo').empty();
+        $('#selVersion').empty();
+        $('#selTipo').empty();
+
+        //carga select marca
+        $.ajax({
+          url: 'http://desarrolloweb.us-west-2.elasticbeanstalk.com/rentacar/marca/',
+          dataType: 'json',
+          error: function() {
+            alert("Error en la petición");
+          }
+        }).done(function(marcas) {
+          $.each(marcas, function(i, item) {
+            $('#selMarca')
+              .append($('<option>', {
+                value: item.idMarca,
+                text: item.nombreMarca
+              }));
+          });
+
+        });
+
+        //carga select Tipo de Vehículos
+        $.ajax({
+          url: 'http://desarrolloweb.us-west-2.elasticbeanstalk.com/rentacar/tipovehiculo/',
+          dataType: 'json',
+          error: function() {
+            alert("Error en la petición");
+          }
+        }).done(function(tipos) {
+          $.each(tipos, function(i, item) {
+            $('#selTipo')
+              .append($('<option>', {
+                value: item.idTipoVehiculo,
+                text: item.nombreTipoVehiculo
+              }));
+          });
+
+        });
+
+        $('#modalNuevo').modal('toggle') //abre o cierra la ventana modal
+      });
+
+
+      //carga select Modelos
+      $("#selMarca").on('focus change', function() {
+
+        $('#selModelo').empty();
+        $('#selVersion').empty();
+
+        var idMarca = $("#selMarca").val();
+
+        $.ajax({
+          url: 'http://desarrolloweb.us-west-2.elasticbeanstalk.com/rentacar/modelospormarca/' + idMarca,
+          dataType: 'json',
+          error: function() {
+            alert("Error en la petición");
+          }
+        }).done(function(tipos) {
+          $.each(tipos, function(i, item) {
+            $('#selModelo')
+              .append($('<option>', {
+                value: item.idModelo,
+                text: item.nombreModelo
+              }));
+          });
+
+        });
+
+
+      });
+
+
+      //carga select Versiones
+      $("#selModelo").on('focus change', function() {
+
+        $('#selVersion').empty();
+        var idModelo = $("#selModelo").val();
+
+        $.ajax({
+          url: 'http://desarrolloweb.us-west-2.elasticbeanstalk.com/rentacar/versionespormodelo/' + idModelo,
+          dataType: 'json',
+          error: function() {
+            alert("Error en la petición");
+          }
+        }).done(function(versiones) {
+          $.each(versiones, function(i, item) {
+            $('#selVersion')
+              .append($('<option>', {
+                value: item.idVersion,
+                text: item.nombre
+              }));
+          });
+
+        });
+
+
+      });
+
+
+
+      //funcion jquery detalle
+      $('table').on('click', '#btnDetalleModal', function() {
+
+        var idVehiculo = table.row($(this).parents('tr')).id(); //obtengo el id de la fila en la que estaba el boton que hizo click
+
+        $.ajax({
+          url: 'http://desarrolloweb.us-west-2.elasticbeanstalk.com/rentacar/vehiculo/' + idVehiculo, //llamo al controller get y le paso el id
+          dataType: 'json',
+          error: function() {
+            alert("Error en la petición"); //si no obtengo datos arrojo una alerta
+          }
+        }).done(function(data) { // si es satisfactorio en la variable data quedará el objeto con los datos en formato json
+
+          $("#txtDetallePatente").val(data.patente); //cargo datos al input text
+          $("#txtDetalleValor").val(data.valor);
+
+          $('#selDetalleMarca') //cargo datos a un select
+            .empty() //primero dejo el select vacío
+            .append($('<option>', { //cargo una sola option en el select con su value y su text
+              value: data.version.modelo.marca.idMarca,
+              text: data.version.modelo.marca.nombreMarca
+            }));
+
+          $('#selDetalleModelo')
+            .empty()
+            .append($('<option>', {
+              value: data.version.modelo.idModelo,
+              text: data.version.modelo.nombreModelo
+            }));
+
+          $('#selDetalleVersion')
+            .empty()
+            .append($('<option>', {
+              value: data.version.idVersion,
+              text: data.version.nombre
+            }));
+
+          $('#selDetalleTipo')
+            .empty()
+            .append($('<option>', {
+              value: data.tipoVehiculo.idTipoVehiculo,
+              text: data.tipoVehiculo.nombreTipoVehiculo
+            }));
+          $("#txtDetalleColor").val(data.color);
+          $("#txtDetalleYear").val(data.año);
+
+
+
+          //$.each(function(i, valor){
+          //   texto += "<option value='"+i+"'>"+valor+"</option>";
+          // });
+          //Agregamos en el id "idprovincia" el valor que tenga la variable texto. (todas las provincias).
+          // $("#idprovincia").html(texto);
+
+          $('#modalDetalle').modal('toggle') //abre o cierra la ventana modal
+
+        });
+
+      });
+
+
+      //Funcion Guardar Nuevo Vehiculo
+
+      $('#btnGuardarNuevo').click(function(event) {
+
+        var patente = $("#txtPatente").val();
+        var valor = $("#txtValor").val();
+        var year = $("#txtYear").val();
+        var color = $("#txtColor").val();
+        var tipo = $("#selTipo").val();
+        var version = $("#selVersion").val();
+
+        var obj ={
+
+                  patente: patente,
+                  valor: valor,
+                  año: year,
+                  color: color,
+                  tipoVehiculo: {
+                  idTipoVehiculo: tipo
+                },
+                  version: {
+                  idVersion: version
+
+                  }
+              }
+
+
+
+        $.ajax({
+          type: "POST",
+          data: JSON.stringify(obj),
+          url: "http://desarrolloweb.us-west-2.elasticbeanstalk.com/rentacar/vehiculo/",
+          contentType: "application/json",
+          success: function(response) {
+            table.ajax.reload();//recarga el json
+            table.draw(); //vuelve a generar la tabla
+
+           $('#modalNuevo').modal('hide');
+          }
+        }).fail(function($xhr) {
+          var data = $xhr.responseJSON;
+
+        });
+
+
+      });
+
+
+      //funcion jquery Editar
+      $('table').on('click', '#btnEditarModal', function() {
+
+
+
+        $('#selEditarMarca').empty(); // se vacían los selects
+        $('#selEditarModelo').empty();
+        $('#selEditarVersion').empty();
+        $('#selEditarTipo').empty();
+
+
+        //carga select marca en formulario editar
+        $.ajax({
+          url: 'http://desarrolloweb.us-west-2.elasticbeanstalk.com/rentacar/marca/',
+          dataType: 'json',
+          error: function() {
+            alert("Error en la petición");
+          }
+        }).done(function(marcas) {
+          $.each(marcas, function(i, item) {
+            $('#selEditarMarca')
+              .append($('<option>', {
+                value: item.idMarca,
+                text: item.nombreMarca
+              }));
+          });
+
+        });
+
+
+
+        //carga select Tipo de Vehículos en formulario editar
+        $.ajax({
+          url: 'http://desarrolloweb.us-west-2.elasticbeanstalk.com/rentacar/tipovehiculo/',
+          dataType: 'json',
+          error: function() {
+            alert("Error en la petición");
+          }
+        }).done(function(tipos) {
+          $.each(tipos, function(i, item) {
+            $('#selEditarTipo')
+              .append($('<option>', {
+                value: item.idTipoVehiculo,
+                text: item.nombreTipoVehiculo
+              }));
+          });
+
+        });
+
+
+
+
+        var idVehiculo = table.row($(this).parents('tr')).id(); //obtengo el id de la fila en la que estaba el boton que hizo click
+
+        $.ajax({
+          url: 'http://desarrolloweb.us-west-2.elasticbeanstalk.com/rentacar/vehiculo/' + idVehiculo, //llamo al controller get y le paso el id
+          dataType: 'json',
+          error: function() {
+            alert("Error en la petición"); //si no obtengo datos arrojo una alerta
+          }
+        }).done(function(data) { // si es satisfactorio en la variable data quedará el objeto con los datos en formato json
+
+          $("#txtEditarPatente").val(data.patente); //cargo datos al input text
+          $("#txtEditarValor").val(data.valor);
+
+
+              //selecciona la marca del vehiculo dentro de la lista de marcas disponibles
+              $('#selEditarMarca option[value='+data.version.modelo.marca.idMarca+']').attr('selected','selected');
+
+
+              $('#selEditarModelo')
+                .empty()
+                .append($('<option>', {
+                  value: data.version.modelo.idModelo,
+                  text: data.version.modelo.nombreModelo
+                }));
+
+              $('#selEditarVersion')
+                .empty()
+                .append($('<option>', {
+                  value: data.version.idVersion,
+                  text: data.version.nombre
+                }));
+
+            //selecciona el tipo del vehiculo dentro de la lista de tipos disponibles
+            $('#selEditarTipo option[value='+data.tipoVehiculo.idTipoVehiculo+']').attr('selected','selected');
+
+
+
+          $("#txtEditarColor").val(data.color);
+          $("#txtEditarYear").val(data.año);
+
+
+          $("#EditarIdVehiculo").val(data.idVehiculo);
+
+
+
+          $('#modalEditar').modal('toggle') //abre o cierra la ventana modal
+
+        });
+
+      });
+
+      //carga select Editar Modelos
+      $("#selEditarMarca").on('focus change', function() {
+
+        $('#selEditarModelo').empty();
+        $('#selEditarVersion').empty();
+
+        var idMarca = $("#selEditarMarca").val();
+
+        $.ajax({
+          url: 'http://desarrolloweb.us-west-2.elasticbeanstalk.com/rentacar/modelospormarca/' + idMarca,
+          dataType: 'json',
+          error: function() {
+            alert("Error en la petición");
+          }
+        }).done(function(tipos) {
+          $.each(tipos, function(i, item) {
+            $('#selEditarModelo')
+              .append($('<option>', {
+                value: item.idModelo,
+                text: item.nombreModelo
+              }));
+          });
+
+        });
+
+
+      });
+
+
+      //carga select Editar Versiones
+      $("#selEditarModelo").on('focus change', function() {
+
+        $('#selEditarVersion').empty();
+        var idModelo = $("#selEditarModelo").val();
+
+        $.ajax({
+          url: 'http://desarrolloweb.us-west-2.elasticbeanstalk.com/rentacar/versionespormodelo/' + idModelo,
+          dataType: 'json',
+          error: function() {
+            alert("Error en la petición");
+          }
+        }).done(function(versiones) {
+          $.each(versiones, function(i, item) {
+            $('#selEditarVersion')
+              .append($('<option>', {
+                value: item.idVersion,
+                text: item.nombre
+              }));
+          });
+
+        });
+
+
+      });
+
+
+      //funcion guardar Editar vehiculo
+      $('#btnGuardarEditar').click(function(event) {
+
+        var patente = $("#txtEditarPatente").val();
+        var valor = $("#txtEditarValor").val();
+        var year = $("#txtEditarYear").val();
+        var color = $("#txtEditarColor").val();
+        var tipo = $("#selEditarTipo").val();
+        var version = $("#selEditarVersion").val();
+        var id = $("#EditarIdVehiculo").val();
+
+        var obj ={
+
+                  patente: patente,
+                  valor: valor,
+                  año: year,
+                  color: color,
+                  tipoVehiculo: {
+                  idTipoVehiculo: tipo
+                },
+                  version: {
+                  idVersion: version
+
+                  }
+              }
+
+
+
+        $.ajax({
+          type: "PUT",
+          data: JSON.stringify(obj),
+          url: "http://desarrolloweb.us-west-2.elasticbeanstalk.com/rentacar/vehiculo/"+id,
+          contentType: "application/json",
+          success: function(response) {
+            table.ajax.reload();//recarga el json
+            table.draw(); //vuelve a generar la tabla
+
+           $('#modalEditar').modal('hide');
+          }
+        }).fail(function($xhr) {
+          var data = $xhr.responseJSON;
+
+        });
+
+
+      });
+
+
+      //funcion jquery Eliminar modal
+      $('table').on('click', '#btnEliminarModal', function() {
+
+        var idVehiculo = table.row($(this).parents('tr')).id(); //obtengo el id de la fila en la que estaba el boton que hizo click
+
+        $("#EliminarIdVehiculo").val(idVehiculo);
+
+        $('#modalEliminar').modal('toggle') //abre o cierra la ventana modal
+
+      });
+
+
+      $('#btnGuardarEliminar').click(function(event) {
+
+
+        var id = $("#EliminarIdVehiculo").val();
+
+
+        $.ajax({
+          type: "DELETE",
+          url: "http://desarrolloweb.us-west-2.elasticbeanstalk.com/rentacar/vehiculo/"+id,
+          contentType: "application/json",
+          success: function(response) {
+            table.ajax.reload();//recarga el json
+            table.draw(); //vuelve a generar la tabla
+
+           $('#modalEliminar').modal('hide');
+          }
+        }).fail(function($xhr) {
+          var data = $xhr.responseJSON;
+
+        });
+
+
+      });
+
+
+    });
+  </script>
+
+</body>
+
+</html>

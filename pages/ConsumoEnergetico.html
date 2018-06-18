@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- DataTables CSS -->
+    <link href="../vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="../vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+   <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">SAO</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /. Menu -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li class="sidebar-search">
+                                                        <!-- /input-group -->
+                        </li>
+                        <li class="active">
+                            <a href="home.html" class="active"><i class="fa fa-dashboard fa-fw"></i> Home</a>
+                        </li>
+
+
+                        <li>
+                            <a href="Sistemas.html"><i class="fa fa-user fa-fw"></i> Sistemas</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-file-text fa-fw"></i> Historico <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                              <li>
+                                  <a href="#"><i class="fa fa-edit fa-fw"></i> Consumo de Agua </a>
+                                  <ul class="nav nav-third-level">
+                                    <li>
+                                        <a href="AguaHoy.html"><i class="fa fa-edit fa-fw"></i> 24 Horas </a>
+                                    </li>
+                                    <li>
+                                        <a href="AguaSemana.html"><i class="fa fa-edit fa-fw"></i> Semana </a>
+                                    </li>
+                                    <li>
+                                        <a href="AguaMes.html"><i class="fa fa-edit fa-fw"></i> Mes </a>
+                                    </li>
+                                  </ul>
+                              </li>
+                              <li>
+                                  <a href="#"><i class="fa fa-edit fa-fw"></i> Consumo de Energia </a>
+                                  <ul class="nav nav-third-level">
+                                    <li>
+                                        <a href="BombaHoy.html"><i class="fa fa-edit fa-fw"></i> 24 Horas </a>
+                                    </li>
+                                    <li>
+                                        <a href="BombaSemana.html"><i class="fa fa-edit fa-fw"></i> Semana </a>
+                                    </li>
+                                    <li>
+                                        <a href="BombaMes.html"><i class="fa fa-edit fa-fw"></i> Mes </a>
+                                    </li>
+                                  </ul>
+                              </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="vehiculos.html"><i class="fa fa-gear fa-fw"></i> Configuracion</a>
+                        </li>
+
+
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+
+        <!-- Page Contenido -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">Combustiblees</h1>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+<!-- Aquí va el contenido -->
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Lista de Combustiblees
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <table width="100%" class="table table-striped table-bordered table-hover" id="tablita">
+                    <thead>
+                        <tr>
+                            <th>Nombre Combustible</th>
+                            <th>Detalle</th>
+                            <th>Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+<!-- acá va el el contenidod de la tabla -->
+
+
+
+
+
+                    </tbody>
+                </table>
+                <!-- acá va el botón nuevo -->
+                <div class="well">
+                    <button type="button" class="btn btn-primary" id="btnNuevaCombustible"> Nueva Combustible</button>
+                </div>
+            </div>
+
+
+            <!-- Modal del boton nuevo -->
+
+            <div class="modal fade" id="modalNuevo" tabindex="-1" role="dialog" aria-labelledby="labelModalnuevo" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="labelModalnuevo">Nueva Combustible</h4>
+                  </div>
+                  <div class="modal-body">
+                    <!-- Ventana modal form nuevo Vehiculo -->
+
+                    <form>
+                      <div class="row">
+                        <div class="col-lg-6">
+                          <div class="form-group">
+                            <label for="txtNombreCombustible">Nombre Combustible</label>
+                            <input type="text" class="form-control" id="txtCombustible" placeholder="Nombre Combustible">
+                          </div>
+                        </div>
+                        <div class="col-lg-6">
+                          <div class="form-group">
+                            <label for="txtDetalleCombustible">Detalle Combustible</label>
+                            <input type="text" class="form-control" id="txtDetalleCombustible" placeholder="Detalle Combustible">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="btnGuardarNuevo">Guardar</button>
+                  </div>
+                </div>
+                <!-- /.modal-content -->
+              </div>
+
+
+                                              <!-- Aca termina el modal del boton nuevo -->
+                                              <!-- comienza modal del boton detalle -->
+
+
+              <div class="modal fade" id="modalDetalle" tabindex="-1" role="dialog" aria-labelledby="labelModalnuevo" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="labelModalnuevo">detalle Combustible</h4>
+                    </div>
+                    <div class="modal-body">
+
+                      <!-- Ventana modal form nuevo Vehiculo -->
+
+                      <form>
+                        <div class="row">
+                          <div class="col-lg-6">
+                            <div class="form-group">
+                              <label for="txtModalNombreCombustible">Nombre Combustible</label>
+                              <input type="text" class="form-control" id="txtModalCombustible" placeholder="Nombre Combustible" disabled>
+                            </div>
+                          </div>
+                          <div class="col-lg-6">
+                            <div class="form-group">
+                              <label for="txtModalDetalleCombustible">Detalle Combustible</label>
+                              <input type="text" class="form-control" id="txtModalDetalleCombustible" placeholder="Detalle Combustible" disabled>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" id="btnOk">OK</button>
+                    </div>
+                  </div>
+                  <!-- /.modal-content -->
+                </div>
+
+
+                                                                    <!-- Aca termina el modal del boton detalle -->
+
+
+              <div class="modal fade" id="modalEditar" tabindex="-1" role="dialog" aria-labelledby="labelModalnuevo" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="labelModalnuevo">Editar combustible</h4>
+                    </div>
+                    <div class="modal-body">
+                      <!-- Ventana modal form nuevo Vehiculo -->
+
+                      <form>
+                        <input type="hidden" class="form-control" id="EditarIdCombustible" >
+                        <div class="row">
+                          <div class="col-lg-6">
+                            <div class="form-group">
+                              <label for="txtEditarCombustible">Combustible</label>
+                              <input type="text" class="form-control" id="txtEditarCombustible" placeholder="Combustible">
+                            </div>
+                          </div>
+                          <div class="col-lg-6">
+                            <div class="form-group">
+                              <label for="txtEditarDetalleCombustible">Detalle Combustible</label>
+                              <input type="text" class="form-control" id="txtEditarDetalleCombustible" placeholder="DetalleCombustible">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                      <button type="button" class="btn btn-primary" id="btnGuardarEditar">Guardar</button>
+                    </div>
+                  </div>
+                  <!-- /.modal-content -->
+                </div>
+
+<!-- MODAL ELIMINAR -->
+
+                <div class="modal fade" id="modalEliminar" tabindex="-1" role="dialog" aria-labelledby="labelModalEliminar" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="labelModalEliminar">Eliminar Combustible</h4>
+                      </div>
+                      <div class="modal-body">
+                        <!-- Ventana modal form Eliminar Vehiculo -->
+
+                        Se eliminará el vehículo con Patente: <strong>ejemplo Marca</strong>
+
+                        <input type="hidden" class="form-control" id="EliminarIdCombustible" >
+
+
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" id="btnCancelar">Cancelar</button>
+                        <button type="button" class="btn btn-danger" id="btnGuardarEliminar">Eliminar</button>
+                      </div>
+                    </div>
+                    <!-- /.modal-content -->
+                  </div>
+                  <!-- /.modal-dialog -->
+                </div>
+
+
+              <!-- fin del modal -->
+            </div>
+
+
+
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+
+
+
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- DataTables JavaScript -->
+    <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+
+
+    <!-- inicialización de la tabla  -->
+    <script>
+    $(document).ready(function() {
+        var table = $('#tablita').DataTable({
+
+          // invocar ajax:
+
+          "ajax": {
+            "url": "http://desarrolloweb.us-west-2.elasticbeanstalk.com/rentacar/combustible/",
+            "dataSrc": ""
+          },
+
+          //llenar columnas
+
+          "columns": [ //define que campos del json se cargarán en las distintas columnas
+            {
+              "data": "tipoCombustible"
+            }, //define donde buscar los datos para la columna 0
+            {
+              "data": "detalle"
+            } //define donde buscar los datos para la columna 3
+          ],
+
+          //id de la fila:
+
+          rowId: 'idCombustible',
+          "columnDefs": [{ //define una columna distinta
+            "targets": 2, // la columna 4 (de los botones) no cargará datos desde el json pero si define contenido por defecto
+            "data": null,
+            "defaultContent":
+            "<button type='button' id='btnDetalleModal' class='btn btn-success btn-circle' data-toggle='modal' data-target='#modalDetalle'><i class='fa fa-search'></i></button>" +
+              "<button type='button' id='btnEditarModal' class='btn btn-warning btn-circle' data-toggle='modal' data-target='#modalEditar'><i class='fa fa-pencil'></i></button>" +
+              "<button type='button' id='btnEliminarModal' class='btn btn-danger btn-circle' data-toggle='modal' data-target='#modalEliminar'><i class='fa fa-trash-o'></i></button>"
+
+          }],
+          responsive: true //transforma la tabla en responsiva, cuando cambia el tamaño se agrupan las filas
+        });
+
+<!-- abre modal nuevo -->
+
+        $("#btnNuevaCombustible").click(function() {
+
+          $('#modalNuevo').modal('toggle') //abre o cierra la ventana modal
+        });
+
+<!-- abre modal detalle -->
+
+        $('table').on('click', '#btnDetalleModal', function() {
+
+          var idCombustible = table.row($(this).parents('tr')).id(); //obtengo el id de la fila en la que estaba el boton que hizo click
+
+          $.ajax({
+            url: 'http://desarrolloweb.us-west-2.elasticbeanstalk.com/rentacar/combustible/' + idCombustible, //llamo al controller get y le paso el id
+            dataType: 'json',
+            error: function() {
+              alert("Error en la petición"); //si no obtengo datos arrojo una alerta
+            }
+          }).done(function(data) { // si es satisfactorio en la variable data quedará el objeto con los datos en formato json
+
+
+            $("#txtModalCombustible").val(data.tipoCombustible); //cargo datos al input text
+            $("#txtModalDetalleCombustible").val(data.detalle);
+
+            $('#btnOk').click(function(event) {$('#modalDetalle').modal('hide')});
+
+
+             //abre o cierra la ventana modal
+
+          });
+
+        });
+
+
+<!-- temrina el modal detalle -->
+
+<!-- Funcion para guarar nuevos -->
+
+        $('#btnGuardarNuevo').click(function(event) {
+
+          var detalle = $("#txtDetalleCombustible").val();
+          var tipoCombustible = $("#txtCombustible").val();
+
+
+          var obj ={
+
+                    detalle: detalle,
+                    tipoCombustible: tipoCombustible
+                }
+
+
+          alert(obj.detalle +" "+
+                obj.tipoCombustible
+        );
+
+          $.ajax({
+            type: "POST",
+            data: JSON.stringify(obj),
+            url: "http://desarrolloweb.us-west-2.elasticbeanstalk.com/rentacar/combustible/",
+            contentType: "application/json",
+            success: function(response) {
+              table.ajax.reload();//recarga el json
+              table.draw(); //vuelve a generar la tabla
+
+             $('#modalNuevo').modal('hide');
+            }
+          }).fail(function($xhr) {
+            var data = $xhr.responseJSON;
+
+          });
+
+
+        });
+
+<!-- fin de la funcion de guardar nuevos -->
+
+<!-- Inicio funcion de editado -->
+
+        $('table').on('click', '#btnEditarModal', function() {
+        var idCombustible = table.row($(this).parents('tr')).id(); //obtengo el id de la fila en la que estaba el boton que hizo click
+
+        $.ajax({
+          url: 'http://desarrolloweb.us-west-2.elasticbeanstalk.com/rentacar/combustible/' + idCombustible, //llamo al controller get y le paso el id
+          dataType: 'json',
+          error: function() {
+            alert("Error en la petición"); //si no obtengo datos arrojo una alerta
+          }
+        }).done(function(data) { // si es satisfactorio en la variable data quedará el objeto con los datos en formato json
+
+          $("#txtEditarCombustible").val(data.tipoCombustible); //cargo datos al input text
+          $("#txtEditarDetalleCombustible").val(data.detalle);
+          $("#EditarIdCombustible").val(data.idCombustible);
+
+        });
+
+        });
+
+        //funcion guardar Editar vehiculo
+        $('#btnGuardarEditar').click(function(event) {
+
+        var tipoCombustible = $("#txtEditarCombustible").val();
+        var detalle = $("#txtEditarDetalleCombustible").val();
+        var id = $("#EditarIdCombustible").val();
+        var obj ={
+
+                  tipoCombustible: tipoCombustible,
+                  detalle: detalle
+
+              }
+        $.ajax({
+          type: "PUT",
+          data: JSON.stringify(obj),
+          url: "http://desarrolloweb.us-west-2.elasticbeanstalk.com/rentacar/combustible/"+id,
+          contentType: "application/json",
+          success: function(response) {
+            table.ajax.reload();//recarga el json
+            table.draw(); //vuelve a generar la tabla
+
+           $('#modalEditar').modal('hide');
+          }
+        }).fail(function($xhr) {
+          alert("Error en la petición");
+          var data = $xhr.responseJSON;
+
+        });
+
+
+        });
+
+
+<!-- fin funcion de edditado -->
+
+<!-- Funcion para eliminar -->
+
+        $('table').on('click', '#btnEliminarModal', function() {
+
+          var idCombustible = table.row($(this).parents('tr')).id(); //obtengo el id de la fila en la que estaba el boton que hizo click
+
+          $("#EliminarIdCombustible").val(idCombustible);
+
+          //$('#modalEliminar').modal('toggle') //abre o cierra la ventana modal
+
+        });
+
+
+        $('#btnGuardarEliminar').click(function(event) {
+
+
+          var id = $("#EliminarIdCombustible").val();
+
+
+          $.ajax({
+            type: "DELETE",
+            url: "http://desarrolloweb.us-west-2.elasticbeanstalk.com/rentacar/combustible/"+id,
+            contentType: "application/json",
+            success: function(response) {
+              table.ajax.reload();//recarga el json
+              table.draw(); //vuelve a generar la tabla
+
+             $('#modalEliminar').modal('hide');
+            }
+          }).fail(function($xhr) {
+            var data = $xhr.responseJSON;
+
+          });
+
+
+        });
+
+        $('#btnCancelar').click(function(event) {$('#modalEliminar').modal('hide')});
+
+<!-- fin de la funcion de eliminar -->
+
+      });
+    </script>
+
+</body>
+
+</html>
